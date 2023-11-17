@@ -1,0 +1,264 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --primary: #e99401;
+    --negro: #262626;
+    --blanco: #FFF;
+    --fuente-principal: 'Outfit', sans serif;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,*::before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+}
+
+img{
+    max-width: 100%;
+   
+}
+
+[class*="__contenedor"]{
+    max-width: 150rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
+[class*="__heading"]{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 5rem 0;
+}
+
+.entrada{
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.entrada__imagen{
+    margin: 0 auto;
+}
+.entrada__contenido{
+    padding:2rem;
+}
+
+.entrada__titulo{
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin: 0;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.entrada__fecha{
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.entrada__enlace{
+    margin-top: 2rem;
+    display: block;
+    text-decoration: none;
+    color: var(--negro);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.entrada__enlace:hover{
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+.entrada__texto{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    font-size: 1.6rem;
+}
+
+/* CSS dentro de product.component.css */
+
+
+.producto {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem; /* Añade un espacio entre la imagen y el contenido */
+    align-items: start; /* Alinea los elementos verticalmente */
+}
+
+@media (min-width: 768px) {
+    .producto {
+        /* Opcional: Ajustes adicionales para pantallas más grandes */
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+@media (min-width: 1200px){
+    .producto{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto__formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.producto__label{
+    font-size: 2.2rem;
+    margin-right: 1rem;
+}
+
+.producto__cantidad{
+    border: 2px solid var(--primary);
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.producto__cantidad:focus-visible{
+    outline:2px solid var(--primary);
+    border: none;
+}
+
+.producto__agregar-carrito{
+    margin-top: 3rem;
+    display: block;
+    background-color: var(--primary);
+    text-decoration:none ;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    padding: 2rem 5rem;
+    columns: var(--blanco);
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.producto__agregar-carrito:hover{
+   
+    background-color: var(--negro);
+    cursor: pointer;
+
+}
+
+.producto__contenido {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    /* Agrega aquí más estilos para el contenido si es necesario */
+}
+
+.producto__shop{
+    margin-top: 20rem;
+}
+
+.producto__nombre{
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.producto__descripcion{
+    font-size: 1.6rem;
+}
+
+.producto__precio{
+    color: var(--primary);
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.producto__enlace{
+    margin-top: 2rem;
+    display: block;
+    text-decoration: none;
+    color: var(--negro);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.producto__enlace:hover{
+    background-color: var(--primary);
+    color: var(--blanco);
+
+}
+
+.producto__imagen {
+    flex: 0 0 auto; /* Evita que la imagen crezca o se encoja, manteniendo su tamaño original */
+    width: auto; /* O un ancho específico si lo prefieres */
+    max-width: 100%; /* Asegura que la imagen no se desborde de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+.checkout__contenedor{
+    margin-top: 10rem;
+
+}
+
+.eliminar__producto{  
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    text-decoration: none;
+    color: var(--negro);
+    padding: 1rem 1rem;
+    border: 1px solid var(--primary);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.eliminar__producto i {
+    color: red; 
+}
+
+.eliminar__producto:hover{
+    background-color: var(--primary);
+    color: var(--blanco);
+    cursor:pointer;
+}
+
+.grid-contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas */
+}
+
+
+

@@ -1,0 +1,12 @@
+/* Estilos para product.component.css */
+.productos__grid{
+    display: grid;
+    gap: 4rem;
+}
+
+@media (min-width: 768px){
+    .productos__grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

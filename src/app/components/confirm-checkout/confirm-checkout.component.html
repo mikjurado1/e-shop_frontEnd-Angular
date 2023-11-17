@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="grid-contenedor">
+    <div>
+        <div class="producto__formulario">
+            <h1>Information checkout</h1>           
+            <!-- Campos del formulario como nombre, dirección, etc. -->
+            <label class="producto__label" for="productName">Name:</label>
+            <h3>{{cliente[0].name}}</h3>
+        </div>
+        <div class="producto__formulario ">
+            <label class="producto__label" for="productName">Last Name:</label>
+            <h3>{{cliente[0].lastName}}</h3>
+        </div>   
+        <div class="producto__formulario ">
+            <label class="producto__label" for="productName">E-mail:</label>
+            <h3>{{cliente[0].email}}</h3>           
+        </div>  
+        <div class="producto__formulario ">
+            <label class="producto__label" for="productName">Address:</label>
+            <h3>{{cliente[0].address}}</h3>        
+        </div>  
+        <div class="producto__formulario ">
+            <label class="producto__label" for="productName">Phone:</label>
+            <h3>{{cliente[0].phone}}</h3>      
+        </div>     
+        <div class="producto__formulario ">
+            <a class="producto__agregar-carrito" (click)="backPage()">Back</a>
+        </div> 
+    </div>
+    <div>
+        <div class="checkout__contenedor">
+            <h1 class="producto__precio">Confirm Cart:</h1>
+            <div>
+                <div *ngFor="let producto of carrito">
+                    <p class="eliminar__producto">Producto: {{ producto.productName }} {{ producto.price }}€ x {{ producto.quantity }} = {{ producto.quantity * producto.price }}€</p>
+                </div>
+                <p>Total Cart: {{ calcularTotal }}€</p>
+                <a class="producto__enlace" (click)="payCart()">Pay</a>
+            </div> 
+        </div>  
+    </div>
+</div>
+
+<app-footer></app-footer>

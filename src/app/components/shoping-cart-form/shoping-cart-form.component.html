@@ -1,0 +1,34 @@
+<!-- Encapsula tu formulario en una etiqueta <form> y vincúlalo con tu FormGroup -->
+<form  [formGroup]="cartForm" (ngSubmit)="onSubmit()">
+
+    <!-- Selector de Producto -->
+    <div class="producto__formulario form-group">
+        <label class="producto__label" for="productName">Product:</label>
+        <select class="producto__cantidad" formControlName="productName" id="productName">
+        <option value="">Select a product</option>
+        <option *ngFor="let producto of productos" [value]="producto.idProduct">
+            {{ producto.title }} {{producto.price}}€ 
+        </option>
+        </select>
+        <!-- Mensaje de error para la validación -->
+        <div *ngIf="cartForm.get('productName')?.invalid && cartForm.get('productName')?.touched">
+        Choose a product
+        </div>
+    </div>
+    
+    <!-- Cantidad -->
+    <div class="producto__formulario form-group">
+        <label class="producto__label" for="quantity">Quantity:</label>
+        <input class="producto__cantidad" type="number" formControlName="quantity" id="quantity" min="1" max="5">
+        <!-- Mensaje de error para la validación -->
+        <div *ngIf="cartForm.get('quantity')?.invalid && cartForm.get('quantity')?.touched">
+        Quantity is required (1-5).
+        </div>
+    </div>
+    <div class="producto__formulario">
+        <!-- Botón de Envío -->
+        <button class="producto__agregar-carrito" type="submit" [disabled]="cartForm.invalid">Add to cart</button>
+    </div>
+    
+</form>
+      

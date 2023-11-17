@@ -1,0 +1,20 @@
+<!-- product-detail.component.html -->
+<app-navbar></app-navbar>
+
+<main class="contenedor">
+    <div class="producto" *ngIf="product; else noProduct">
+        <img class="producto__imagen" [src]="product.imageUrl" alt="Product image">
+        <div class="producto__shop">
+            <h2 class="producto__nombre">{{ product.title }}</h2>
+            <p class="producto__descripcion">{{ product.description }}</p>
+            <p class="producto__precio">{{ product.price }}€</p>
+            <app-shoping-cart-form></app-shoping-cart-form>
+        </div>
+        <app-shopping-cart-display></app-shopping-cart-display>       
+    </div>
+    <ng-template #noProduct><p>Product not found.</p></ng-template>
+</main>
+
+
+<app-footer></app-footer>
+

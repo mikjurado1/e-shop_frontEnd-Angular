@@ -1,0 +1,13 @@
+<!-- product.component.html -->
+<div class="producto">
+    <img class="producto__imagen" [src]="product.imageUrl" alt="{{product.title}}"/>
+    <div class="producto__contenido">
+        <h3 class="producto__nombre">{{product.title}}</h3>
+        <p class="producto__descripcion">{{product.description}}</p>
+        <p class="producto__precio">{{product.price}}€</p>
+        <a class="producto__enlace" [routerLink]="['/productDetail', product.idProduct]">See Product</a>
+    </div>
+</div>
+
+
+  

@@ -1,0 +1,16 @@
+
+<main>
+    <div class="checkout__contenedor">
+        <h1 class="producto__precio">Your Cart:</h1>
+        <div>
+            <div  *ngFor="let producto of carrito;  let i = index">
+                <p class="eliminar__producto">Producto: {{ producto.productName }} {{ producto.price }}€ x {{ producto.quantity }} = {{ producto.quantity * producto.price }}€ <a  (click)="eliminarProducto(i)"><i class="fas fa-trash-alt"></i></a></p>
+            </div>
+            <p>Total Cart: {{  calcularTotal }}€</p>
+            <a class="producto__enlace" (click)="irACheckout()">CheckOut</a>
+        </div> 
+    </div>  
+</main>
+
+
+

@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+
+<div class="grid-contenedor">
+    <form (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">
+        <div class="producto__formulario form-group">
+            <h1>Information checkout</h1>           
+            <!-- Campos del formulario como nombre, dirección, etc. -->
+            <label class="producto__label" for="productName">Name:</label>
+            <input class="producto__cantidad" formControlName="name" type="text" placeholder="">
+            <div *ngIf="checkoutForm.get('name')?.invalid && checkoutForm.get('name')?.touched">
+                Name is required:
+            </div>
+        </div>
+        <div class="producto__formulario form-group">
+            <label class="producto__label" for="productName">Last Name:</label>
+            <input class="producto__cantidad" formControlName="lastName" type="text" placeholder="">
+            <div *ngIf="checkoutForm.get('lastName')?.invalid && checkoutForm.get('lastName')?.touched">
+                Last Name is required:
+            </div>
+        </div>   
+        <div class="producto__formulario form-group">
+            <label class="producto__label" for="productName">E-mail:</label>
+            <input class="producto__cantidad" formControlName="email" type="email" placeholder="">
+            <div *ngIf="checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched">
+                E-mail is required:
+            </div>
+        </div>  
+        <div class="producto__formulario form-group">
+            <label class="producto__label" for="productName">Address:</label>
+            <input class="producto__cantidad" formControlName="address" type="text" placeholder="">
+            <div *ngIf="checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched">
+                Address is required:
+            </div>
+        </div>  
+        <div class="producto__formulario form-group">
+            <label class="producto__label" for="productName">Phone:</label>
+            <input class="producto__cantidad" formControlName="phone" type="tel"placeholder="">
+            <div *ngIf="checkoutForm.get('phone')?.invalid && checkoutForm.get('phone')?.touched">
+                Phome is required:
+            </div>
+        </div>     
+        <div class="producto__formulario form-group">
+            <button class="producto__agregar-carrito" type="submit" [disabled]="checkoutForm.invalid">Proceed to payment</button>
+        </div>    
+    </form>
+    <div class="producto__formulario form-group">      
+        <h1>Your Cart</h1>
+        <div  *ngFor="let producto of carrito;  let i = index">
+            <!-- Detalles del producto -->
+            <p class="eliminar__producto">Producto: {{ producto.productName }} {{ producto.price }}€ x {{ producto.quantity }} = {{ producto.quantity * producto.price }}€ <a  (click)="eliminarProducto(i)"><i class="fas fa-trash-alt"></i></a></p>
+        </div>
+        <p>Total Cart: {{  calcularTotal }}€</p>
+    </div> 
+<div>
+
+
+  
+
+
+
+
+  

@@ -1,0 +1,10 @@
+<article class="entrada">
+    <img class="entrada__imagen" [src]="blog.imgUrl" alt="{{blog.title}}"/>
+    <div class="entrada__contenido">
+        <h3 class="entrada__titulo">{{blog.title}}</h3>
+        <p class="entrada__fecha">{{blog.date}}</p>
+        <p class="entrada__texto">{{blog.text}}</p>
+        <a class="entrada__enlace" [routerLink]="['/blogDetail', blog.id]">Read Blog</a>
+    </div>
+</article>
+        

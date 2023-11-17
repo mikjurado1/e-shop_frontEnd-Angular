@@ -1,0 +1,54 @@
+.header{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .7), rgb(0 0 0 / .7)), url("../../../assets/header.jpg");
+    background-size: cover;
+    background-position: 50%;
+    padding: 5rem 0;
+    position: relative;
+}
+
+.header__barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media(min-width: 768px){
+    .header__barra{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.header__logo{
+    width: 30rem;
+}
+
+.navegacion{
+    display: flex;
+    gap: 2rem;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media(min-width: 768px){
+    .navegacion{
+        margin-top: 0;
+    }
+}
+
+.navegacion__enlace{
+    color: var(--blanco);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.navegacion__enlace:hover{
+    background-color: var(--primary);
+}

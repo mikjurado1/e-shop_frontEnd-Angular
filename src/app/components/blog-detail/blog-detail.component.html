@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<article class="entrada">
+    <div *ngIf="blog; else noBlog">
+        <main class="nosotros nosotros__contenedor">
+            <h2 class="nosotros__heading">{{blog.title}}</h2>
+        </main>
+        <div class="nosotros__grid">
+            <img class="entrada__imagen" [src]="blog.imgUrl" alt="Blog image">
+            <div class="nosotros__contenido">
+                <h3 class="entrada__titulo">{{blog.title}}</h3>
+                <p class="entrada__fecha">{{ blog.date }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+                <p class="entrada__texto">{{ blog.text }}</p>
+            </div>
+        </div>            
+    </div>
+    <ng-template #noBlog><p>Blog not found.</p></ng-template>
+</article>
+<app-footer></app-footer>
+
