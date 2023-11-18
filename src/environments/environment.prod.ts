@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://tu-api-en-heroku.com/api'
+    apiUrl: 'https://backend-e-shop-guitar.fly.dev'
   };
   
