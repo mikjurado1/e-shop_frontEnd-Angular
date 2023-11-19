@@ -9,3 +9,5 @@ RUN npm run build --prod
 # Paso 2: Preparar el servidor Nginx para servir la aplicación
 FROM nginx:alpine
 COPY --from=build-step /app/dist/css1 /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf 
+
