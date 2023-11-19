@@ -28,6 +28,7 @@ import { ConfirmCheckoutComponent } from './components/confirm-checkout/confirm-
 import { PaymentSucessComponent } from './components/payment-sucess/payment-sucess.component';
 import { PaymentFailComponent } from './components/payment-fail/payment-fail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,7 @@ import { PaymentFailComponent } from './components/payment-fail/payment-fail.com
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
    
   ],
   providers: [],

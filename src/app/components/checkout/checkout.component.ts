@@ -3,6 +3,7 @@ import { CartService } from 'src/app/shared/cart.service';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/models/client.model';
+import { AppConfigServiceService } from 'src/app/shared/app-config-service.service';
 
 @Component({
   selector: 'app-checkout',
@@ -16,13 +17,15 @@ export class CheckoutComponent implements OnInit{
   carrito: any[] = [];
   totalCarrito!: number;
   client: Client[] = [];
+  config: any;
 
-  constructor(private formBuilder: FormBuilder, private cartService: CartService, private router: Router){ }
+  constructor(private formBuilder: FormBuilder, private cartService: CartService, private router: Router, private AppConfigService: AppConfigServiceService){ }
 
   ngOnInit(): void {
       this.carrito = this.cartService.obtenerCarrito();
       this.totalCarrito = this.cartService.calcularTotal();
       this.client = this.cartService.obtenerCliente();
+      this.config = this.AppConfigService.initializeApp();
 
       this.checkoutForm = this.formBuilder.group({
         idClient: [null], // ID inicializado como null o con un valor predeterminado
@@ -35,6 +38,8 @@ export class CheckoutComponent implements OnInit{
   } 
 
   onSubmit() {
+    console.log("ejecucando this.config desde onSubmit()", this.config)
+    console.log("Intentando enviar el formulario...");
     //Si el ID es null, se está creando un nuevo cliente
     if (!this.checkoutForm.get('idClient')?.value ) {
       this.checkoutForm.get('idClient')?.setValue(this.generateUniqueId());
